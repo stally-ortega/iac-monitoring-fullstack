@@ -27,6 +27,6 @@
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "npm install --prefix angular_client && npm install --prefix backend_api && chmod +x .devcontainer/scripts/setup-ssh.sh && .devcontainer/scripts/setup-ssh.sh",
+  "postCreateCommand": "git submodule update --init --recursive && npm install --prefix angular_client && npm install --prefix backend_api && chmod +x .devcontainer/scripts/setup-ssh.sh && .devcontainer/scripts/setup-ssh.sh",
   "postAttachCommand": "code . && sleep 1 && code --reuse-window --launch 'Start Angular + Backend'"
 }
