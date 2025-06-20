@@ -1,0 +1,27 @@
+{
+  "name": "Angular + Node Monorepo",
+  "dockerFile": "Dockerfile",
+  "workspaceFolder": "/workspaces/iac-monitoring-fullstack",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "angular.ng-template"
+      ]
+    }
+  },
+  "forwardPorts": [4200, 3000],
+  "portsAttributes": {
+    "4200": {
+      "label": "Angular App",
+      "onAutoForward": "openBrowser"
+    },
+    "3000": {
+      "label": "Node.js API",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "npm install --prefix angular && npm install --prefix backend",
+  "postAttachCommand": "code . && sleep 1 && code --reuse-window --launch 'Start Angular + Backend'"
+}

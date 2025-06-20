@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Angular",
+      "type": "shell",
+      "command": "npm start",
+      "options": {
+        "cwd": "angular"
+      },
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch"
+    },
+    {
+      "label": "Start Backend",
+      "type": "shell",
+      "command": "npm start",
+      "options": {
+        "cwd": "backend"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "Start Angular + Backend",
+      "dependsOn": ["Start Angular", "Start Backend"],
+      "dependsOrder": "parallel"
+    }
+  ]
+}

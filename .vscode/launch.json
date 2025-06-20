@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Start Angular + Backend",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "Start Angular + Backend",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}
