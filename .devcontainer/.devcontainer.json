@@ -7,8 +7,13 @@
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "angular.ng-template"
-      ]
+        "angular.ng-template",
+        "ms-vscode.vscode-typescript-next",
+        "vivaxy.vscode-conventional-commits",
+        "ms-azuretools.vscode-containers",
+        "github.copilot",
+        "github.copilot-chat"
+      ],
     }
   },
   "forwardPorts": [4200, 3000],
@@ -22,6 +27,7 @@
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "npm install --prefix angular && npm install --prefix backend",
+  "postCreateCommand": "npm install --prefix angular && npm install --prefix backend && chmod +x .devcontainer/scripts/setup-ssh.sh && .devcontainer/scripts/setup-ssh.sh",
   "postAttachCommand": "code . && sleep 1 && code --reuse-window --launch 'Start Angular + Backend'"
+
 }
