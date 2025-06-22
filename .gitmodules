@@ -1,6 +1,6 @@
 [submodule "backend_api"]
 	path = backend_api
-	url = https://github.com/stally-ortega/node-IAC-monitoring.git
+	url = git@github.com:stally-ortega/backend_api.git
 [submodule "angular_client"]
 	path = angular_client
 	url = git@github.com:stally-ortega/angular-IAC-monitoring.git
