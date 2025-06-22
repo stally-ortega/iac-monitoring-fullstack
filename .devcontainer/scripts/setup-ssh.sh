@@ -1,21 +1,12 @@
 #!/bin/bash
 
-KEY_PATH="$HOME/.ssh/id_ed25519"
+echo "🔐 Configurando agente SSH para Codespaces..."
 
-# Si no existe una clave, la generamos
-if [ ! -f "$KEY_PATH" ]; then
-  echo "🔐 Generando nueva clave SSH..."
-  ssh-keygen -t ed25519 -f "$KEY_PATH" -N "" -C "codespace@github.com"
-fi
+# Inicia el agente SSH
+eval "$(ssh-agent -s)"
 
-# Inicia el agente si no está corriendo
-if [ -z "$SSH_AUTH_SOCK" ]; then
-  eval "$(ssh-agent -s)"
-fi
+# GitHub Codespaces ya configura SSH keys automáticamente
+# Solo debes forzar Git a usar SSH en vez de HTTPS
+git config --global url."git@github.com:".insteadOf "https://github.com/"
 
-# Agrega la clave al agente
-ssh-add "$KEY_PATH"
-
-# Muestra la clave pública para que la puedas copiar fácilmente si hace falta
-echo "📎 Tu clave pública SSH es:"
-cat "${KEY_PATH}.pub"
+echo "✅ SSH configurado correctamente para GitHub."
