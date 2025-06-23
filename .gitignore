@@ -1,4 +1,7 @@
 node_modules/
 dist/
+*.log
 .env
-.DS_Store
+.vscode/
+.devcontainer/devcontainer.json
+docker-compose.yml
