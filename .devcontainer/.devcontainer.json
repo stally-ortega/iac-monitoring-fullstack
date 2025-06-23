@@ -1,6 +1,7 @@
 {
   "name": "Angular + Node Monorepo",
   "dockerFile": "Dockerfile",
+  "service": "frontend",
   "workspaceFolder": "/workspaces/iac-monitoring-fullstack",
   "customizations": {
     "vscode": {
