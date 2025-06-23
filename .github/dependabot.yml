@@ -1,0 +1,46 @@
+version: 2
+updates:
+  # Dependencias para el frontend (Angular)
+  - package-ecosystem: "npm"
+    directory: "/angular_client"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "frontend"
+  # Dependencias para el backend (Node.js)
+  - package-ecosystem: "npm"
+    directory: "/backend_api"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "backend"
+  # Opcional: Actualizaciones para Dockerfiles
+  - package-ecosystem: "docker"
+    directory: "/angular_client"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "docker"
+      - "frontend"
+  - package-ecosystem: "docker"
+    directory: "/backend_api"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "docker"
+      - "backend"
+  # Dependencias para MongoDB en el contenedor de desarrollo
+  - package-ecosystem: "docker"
+    directory: "/.devcontainer"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "docker"
+      - "mongo"

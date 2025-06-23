@@ -1,6 +1,6 @@
 {
   "name": "Angular + Node Monorepo",
-  "dockerFile": "Dockerfile",
+  "dockerComposeFile": ["docker-compose.yml"],
   "service": "frontend",
   "workspaceFolder": "/workspaces/iac-monitoring-fullstack",
   "customizations": {
